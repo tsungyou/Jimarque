@@ -1,5 +1,5 @@
-from config import db_params
-import psycopg2
+from crontab.config_c import db_params
+import psycopg2 # type: ignore
 import pandas
 
 

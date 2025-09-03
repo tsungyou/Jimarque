@@ -1,0 +1,29 @@
+2025-09-04 05:06:18,469 - INFO - running init_metatrader5_data
+2025-09-04 05:06:26,292 - ERROR - init_metatrader5_data connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-09-04 05:06:26,295 - INFO - running get_metatrader5_data
+2025-09-04 05:06:31,555 - ERROR - get_metatrader5_data connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-09-04 05:06:31,556 - INFO - 開始排程執行
+2025-09-04 05:06:36,623 - INFO - 排程已手動停止
+2025-09-04 05:07:29,110 - INFO - running init_metatrader5_data
+2025-09-04 05:07:34,907 - ERROR - init_metatrader5_data connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-09-04 05:07:34,913 - INFO - running get_metatrader5_data
+2025-09-04 05:07:39,121 - ERROR - get_metatrader5_data connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-09-04 05:07:39,121 - INFO - 開始排程執行
+2025-09-04 05:08:39,953 - INFO - 排程已手動停止
+2025-09-04 05:12:23,190 - INFO - running init_metatrader5_data

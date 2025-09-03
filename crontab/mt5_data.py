@@ -1,10 +1,12 @@
 from tqdm import tqdm
 import pandas as pd
-import MetaTrader5 as mt5
+import MetaTrader5 as mt5 # type: ignore
 from datetime import datetime, timedelta
 import pytz
-import psycopg2
-from config import db_params
+import psycopg2 # type: ignore
+from config import db_params, add_logging, error_logging
+import logging
+
 class MT5Inserter:
     def __init__(self, db_params):
         self.db_params = db_params
@@ -72,7 +74,21 @@ class MT5Inserter:
     def shutdown(self):
         mt5.shutdown()
 
-def main():
+def tester():
+    db_params = {
+        "dbname": "postgres",
+        "user": "postgres",
+        "password": "P910317p",
+        "host": "localhost",
+        "port": 5433
+    }
+
+    inserter = MT5Inserter(db_params)
+    s = inserter.get_symbols()
+    for sy in s:
+        print(sy)
+
+def runner(init=False):
     current_mand_timeframes = {
         mt5.TIMEFRAME_M1: 69,
         mt5.TIMEFRAME_M5: 300,
@@ -95,7 +111,6 @@ def main():
     }
     inserter = MT5Inserter(db_params)
     s = inserter.get_symbols()
-    init = False
     if init:
         used_dict = current_mand_timeframes
     else:
@@ -104,6 +119,24 @@ def main():
         for tf, count in used_dict.items():
             df = inserter.fetch_data(symbol, tf, count)
             inserter.insert_to_postgres(df, tf_tables[tf])
+    inserter.shutdown()
+
+def init_metatrader5_data():
+    try:
+        add_logging("running init_metatrader5_data")
+        init=True
+        runner(init=init)
+    except Exception as e:
+        error_logging(f"init_metatrader5_data {e}")
+
+def get_metatrader5_data():
+    try:
+        add_logging("running get_metatrader5_data")
+        init=False
+        runner(init=init)
+    except Exception as e:
+        error_logging(f"get_metatrader5_data {e}")
 
 if __name__ == "__main__":
-    main()
+    # get_metatrader5_data()
+    tester()

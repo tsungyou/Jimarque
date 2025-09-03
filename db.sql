@@ -1,3 +1,12 @@
+#windows
+.env/Script/activate
+#
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+#temp
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+
+
 #checker
 SELECT rolname, rolsuper, rolinherit, rolcreaterole, rolcreatedb, rolcanlogin 
 FROM pg_roles;
