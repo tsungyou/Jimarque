@@ -2,3 +2,5 @@ MetaTrader5
 tqdm
 pandas
 pandas
+psycopg2
+tqdm
