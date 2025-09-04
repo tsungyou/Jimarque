@@ -15,6 +15,8 @@ logging_config = {
     "format": "%(asctime)s - %(levelname)s - %(message)s"
 }
 
+base_url = "https://quote-feed.zacks.com/"
+
 def add_logging(funcName):
     logging.basicConfig(**logging_config)
     logging.info(funcName)
