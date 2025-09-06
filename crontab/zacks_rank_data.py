@@ -4,6 +4,10 @@ from datetime import datetime
 from config import db_params, base_url
 
 
+'''
+npm install zacks-api --global
+zacks-api TSLA
+'''
 
 columns_to_save = [
     "zacks_rank", "zacks_rank_text", 
