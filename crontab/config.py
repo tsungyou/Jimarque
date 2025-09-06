@@ -1,11 +1,11 @@
 import logging 
 from datetime import datetime
 db_params = {
-    "dbname": "postgres",
+    "dbname": "jimarque",
     "user": "postgres",
-    "password": "P910317p",
+    "password": "buddyrich134",
     "host": "localhost",
-    "port": 5433
+    "port": 5432
 }
 
 logging_config = {

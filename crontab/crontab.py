@@ -3,7 +3,7 @@ import schedule # tye: ignore
 from datetime import datetime
 import threading
 import time
-from mt5_data import get_metatrader5_data, init_metatrader5_data
+from zacks_rank_data import get_zacks_data
 # from tw_breakouts import get_breakouts
 # from rynek.v1.us_strategies import us_routine
 def run_threaded(job_func):
@@ -12,18 +12,17 @@ def run_threaded(job_func):
 
 if __name__ == '__main__':
     print(datetime.now())
-    init_metatrader5_data()
-    get_metatrader5_data()
+    get_zacks_data()   
     logging.info('開始排程執行')
     # TW
     weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday']
     for day in weekdays:
-        ...
+        pass
 
     # US, Metatrader5
     weekdays_us = ['tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
     for day in weekdays:
-        getattr(schedule.every(), day).at('06:30').do(run_threaded, get_metatrader5_data)
+        getattr(schedule.every(), day).at('09:30').do(run_threaded, get_zacks_data)
 
     try:
         while True:
