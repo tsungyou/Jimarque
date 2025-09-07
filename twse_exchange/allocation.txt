@@ -1,0 +1,12 @@
+twse:
+    1. price
+    2. code_list (not etf)
+    3. block_trading
+    4. pe_ratio
+
+tpex:
+    1. code_list
+    2. pe_ratio
+    
+us:
+    1. zacks_rank

@@ -1,1 +1,5 @@
 .env
+__pycache__
+twse_exchange/__pycache__
+twse_exchange/.env312
+crontab/__pycache__

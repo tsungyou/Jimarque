@@ -7,8 +7,7 @@ import numpy as np # type: ignore
 from datetime import datetime
 import warnings
 warnings.filterwarnings("ignore")
-from config import DB_HOST, DB_NAME, DB_PASS, DB_USER
-
+from util import db_params
 class SIGNAL(object):
     def __init__(self):
         self.conn = None
@@ -19,8 +18,8 @@ class SIGNAL(object):
         self._connection()
     def _connection(self):
         if self.conn == None:
-            print(f"Connecting to database {DB_NAME}...")
-            conn = psycopg2.connect(host=DB_HOST, dbname=DB_NAME, user=DB_USER, password=DB_PASS)
+            print(f"Connecting to database {db_params['dbname']}...")
+            conn = psycopg2.connect(**db_params)
             self.conn = conn
             self.cursor = self.conn.cursor()
             print("Connection Successful!")
